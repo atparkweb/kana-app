@@ -1,0 +1,14 @@
+{
+  "name": "KanaApp",
+  "version": "0.0.1",
+  "description": "An app to help teach the Japanese Kana",
+  "author": "Andy Park",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "protractor": "~0.18.1"
+  },
+  "dependencies": {
+    "mongoose": "~3.8.7",
+    "express": "~3.4.8"
+  }
+}

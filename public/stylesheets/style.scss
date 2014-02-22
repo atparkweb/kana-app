@@ -1,0 +1,92 @@
+@import 'partials/normalize';
+@import 'partials/animations';
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  background-color: #666;
+  color: #fff;
+  margin: 0;
+  padding: 1em;
+  text-align: center;
+}
+
+.main {
+  padding: 2em;
+}
+
+.grid-container {
+  margin: 1em 0;
+}
+
+.card-grid {
+  display: inline-flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  .card-grid-cell {
+    flex: 1 5 auto;
+    margin-right: 1em;
+    margin-bottom: 1em;
+  }
+}
+
+.nav-bar {
+  background-color: #333;
+  padding: 1em 0;
+
+  .nav-menu a {
+    color: #fff;
+  }
+}
+
+.nav-menu {
+  list-style-type: none;
+  margin: 0;
+
+  .nav-menu-item {
+    border-right: 1px solid #333;
+    display: inline-block;
+    margin-right: 0.5em;
+    padding-right: 0.5em;
+
+    a {
+      text-decoration: none;
+    }
+  }
+  .nav-menu-item:last-child {
+    border-right: none;
+  }
+}
+
+.hiragana-heading,
+.hiragana-card:hover {
+  background-color: #89c243;
+  color: #fff;
+}
+.katakana-heading,
+.katakana-card:hover {
+  background-color: #ff9319;
+  color: #fff;
+}
+
+.kana-card {
+  background-color: #eee;
+  box-shadow: 2px 2px 1px rgba(0,0,0,0.3);
+  padding: 1em;
+  cursor: pointer;
+  text-align: center;
+  width: 80px;
+
+  .romaji {
+    font-size: 1em;
+  }
+  .kana {
+    font-size: 2em;
+    margin: 0;
+  }
+}
