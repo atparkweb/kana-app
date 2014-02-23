@@ -1,10 +1,10 @@
 
 // Declare modules
-angular.module('app.services', []);
-angular.module('app.filters', []);
+angular.module('kana.services', []);
+angular.module('kana.filters', []);
 
 // Declare main module
-var app = angular.module('app', ['ngRoute', 'ngAnimate', 'app.services', 'app.filters']);
+var app = angular.module('kana', ['ngRoute', 'ngAnimate', 'kana.services', 'kana.filters']);
 
 app.config(['$routeProvider', '$locationProvider',
     function ($routeProvider, $locationProvider) {
@@ -13,12 +13,7 @@ app.config(['$routeProvider', '$locationProvider',
         $routeProvider.
             when('/kana/:type', {
                 templateUrl: 'views/kana.html',
-                controller: 'KanaCtrl',
-                resolve: {
-                    kana: function (kanaList) {
-                        return kanaList();
-                    }
-                }
+                controller: 'KanaCtrl'
             }).
             otherwise({
                 redirectTo: '/kana/hiragana'

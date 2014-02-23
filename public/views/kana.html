@@ -1,11 +1,12 @@
 <h1 class="{{title}}-heading">{{title | uppercase}}</h1>
 
 <div class="main">
-    <button ng-click="convert()">Convert</button>
     <div class="grid-container">
-        <div ng-repeat="(k,v) in kana" class="card-grid {{title}}-grid">
-            <div class="kana-card card-grid-cell {{title}}-card">
-                <span class="kana">{{v | fromCharCode}}</span>
+        <div ng-repeat="group in kana" class="card-grid {{title}}-grid">
+            <div ng-repeat="i in group">
+                <div ng-repeat="(k,v) in i" class="kana-card card-grid-cell {{title}}-card">
+                    <span class="kana">{{v}}</span>
+                </div>
             </div>
         </div>
     </div>

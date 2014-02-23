@@ -1,22 +1,20 @@
-angular.module('app').
-    controller('KanaCtrl', ['$scope', '$routeParams', 'kana',
-        function ($scope, $routeParams, kana) {
+angular.module('kana').
+    controller('KanaCtrl', ['$scope', '$routeParams', 'kanaService',
+        function ($scope, $routeParams, kanaService) {
             'use strict';
 
-            var type = $routeParams.type;
+            var type = $routeParams.type.toLowerCase();
 
             $scope.title = _.contains(['hiragana', 'katakana'], type) ? type : '';
-            $scope.kana = kana;
 
-            $scope.offset = 1;
-
-            $scope.convert = function () {
-                var offset = $scope.offset;
-
-                _.each($scope.kana, function (v, k, list) {
-                    list[k] = v + offset;
-                });
-
-                $scope.offset *= -1;
-            };
+            switch (type) {
+            case 'hiragana':
+                $scope.kana = kanaService.getHiragana();
+                break;
+            case 'katakana':
+                $scope.kana = kanaService.getKatakana();
+                break;
+            default:
+                $scope.kana = [];
+            }
         }]);
